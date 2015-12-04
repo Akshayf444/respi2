@@ -17,12 +17,12 @@ class MySQLDatabase {
     }
 
     public function open_connection() {        
-$this->connection = mysqli_connect("50.62.209.85", "jardiance", "jardiance@123");
+$this->connection = mysqli_connect("50.62.209.81", "respi2", "respi2@123");
 //        $this->connection = mysqli_connect("localhost", "root", "");
         if (!$this->connection) {
             die("Database connection failed: ");
         } else {
-            $db_select = mysqli_select_db($this->connection, "jardiance");
+            $db_select = mysqli_select_db($this->connection, "respi2");
             if (!$db_select) {
                 die("Database selection failed: " . mysqli_error($this->connection));
             }
