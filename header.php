@@ -13,7 +13,7 @@
 
         <!-- MetisMenu CSS -->
         <link href="http://instacom.in/Cutisera/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet" />
-
+        <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
         <!-- Timeline CSS -->
         <link href="http://instacom.in/Cutisera/dist/css/timeline.css" rel="stylesheet" />
 
