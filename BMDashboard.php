@@ -1,47 +1,50 @@
-<?php require_once './header.php'; ?>
-    <style>
-        .gvstyling th
-        {
-            font-size: 12px;
-            padding-left: 10px;
-            text-align: left;
-        }
-        .gvstyling td
-        {
-            text-align: left;
-            font-size: 12px;
-            padding-left: 10px;
-        }
-        .gvstyling tr
-        {
-            text-align: left;
-            padding-left: 10px;
-            font-size: 12px;
-        }
-        .btn
-        {
-            padding-left:10px;
-        }
-    </style>
+<?php require_once("./includes/initialize.php");
+require_once './header.php';
+$bm_empid = $_SESSION['bdmemp'];
+?>
+<style>
+    .gvstyling th
+    {
+        font-size: 12px;
+        padding-left: 10px;
+        text-align: left;
+    }
+    .gvstyling td
+    {
+        text-align: left;
+        font-size: 12px;
+        padding-left: 10px;
+    }
+    .gvstyling tr
+    {
+        text-align: left;
+        padding-left: 10px;
+        font-size: 12px;
+    }
+    .btn
+    {
+        padding-left:10px;
+    }
+</style>
 
 
-    <!-- Bootstrap Core CSS -->
-    <script src="http://instacom.in/Cutisera/js/jquery-1.9.1.min.js"></script>
-   <link href="http://instacom.in/Cutisera/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- MetisMenu CSS -->
-    <link href="http://instacom.in/Cutisera/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
-    <!-- Timeline CSS -->
-    <link href="http://instacom.in/Cutisera/dist/css/timeline.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="http://instacom.in/Cutisera/dist/css/sb-admin-2.css" rel="stylesheet">
-    <!-- Morris Charts CSS -->
-    <link href="http://instacom.in/Cutisera/bower_components/morrisjs/morris.css" rel="stylesheet">
-    <!-- Custom Fonts -->
-    <link href="http://instacom.in/Cutisera/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet"
-        type="text/css">
+<!-- Bootstrap Core CSS -->
+<script src="http://instacom.in/Cutisera/js/jquery-1.9.1.min.js"></script>
+<link href="http://instacom.in/Cutisera/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- MetisMenu CSS -->
+<link href="http://instacom.in/Cutisera/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+<!-- Timeline CSS -->
+<link href="http://instacom.in/Cutisera/dist/css/timeline.css" rel="stylesheet">
+<!-- Custom CSS -->
+<link href="http://instacom.in/Cutisera/dist/css/sb-admin-2.css" rel="stylesheet">
+<!-- Morris Charts CSS -->
+<link href="http://instacom.in/Cutisera/bower_components/morrisjs/morris.css" rel="stylesheet">
+<!-- Custom Fonts -->
+<link href="http://instacom.in/Cutisera/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet"
+      type="text/css">
 
-    <!-- it works the same with all jquery version from 1.x to 2.x -->
-    <script type="text/javascript" src="http://instacom.in/Cutisera/js/jquery-1.9.1.min.js"></script>
+<!-- it works the same with all jquery version from 1.x to 2.x -->
+<script type="text/javascript" src="http://instacom.in/Cutisera/js/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="http://instacom.in/Cutisera/js/jssor.js"></script>
 <script type="text/javascript" src="http://instacom.in/Cutisera/js/jssor.slider.js"></script>
 <script>
@@ -139,6 +142,13 @@
     </div>
     <!-- /.row -->
     <br />
+    <?php
+    $conditions = array('rm.BM_EMP_ID = ' . $bm_empid);
+    $dashboard = man_power::bmViewStatus($conditions);
+    if (!empty($dashboard)) {
+        $dashboard = array_shift($dashboard);
+    }
+    ?>
     <div class="row">
         <div class="col-lg-6 col-md-6">
             <div style="background-color:#f0ad4e;border-radius:4px;border:1px solid transparent">
@@ -149,10 +159,10 @@
                         </div>
                         <div class="col-xs-10 text-right">
                             <div class="medium">
-                                <label  id="lblPoint" style="color:white">0
+                                <label  id="lblPoint" style="color:white"><?php echo isset($dashboard->Practicing_Change) ? $dashboard->Practicing_Change : 0; ?>
                                 </label>
                             </div>
-                            <div><span style="color:white">Rank</span></div>
+                            <div><span style="color:white">Dr Started Practicing Change</span></div>
                         </div>
                     </div>
                 </div>
@@ -168,11 +178,11 @@
                         </div>
                         <div class="col-xs-10 text-right">
                             <div class="medium">
-                                <label id="lblRx"  style="color:white">0
+                                <label id="lblRx"  style="color:white"><?php echo isset($dashboard->Check_Points) ? $dashboard->Check_Points : 0; ?>
                                 </label>
                             </div>
                             <div>
-                                <span style="color:white">Point Accumulated(Till Date)</span></div>
+                                <span style="color:white"> Rotahaler Checks Points</span></div>
                         </div>
                     </div>
                 </div>
@@ -191,10 +201,10 @@
                         </div>
                         <div class="col-xs-10 text-right">
                             <div class="medium">
-                                <label  id="lblpending" style="color:white">0
+                                <label  id="lblpending" style="color:white"><?php echo isset($dashboard->RCP_Drives) ? $dashboard->RCP_Drives : 0; ?>
                                 </label>
                             </div>
-                            <div><span style="color:white">Pending Points</span></div>
+                            <div><span style="color:white">RCP Drives</span></div>
                         </div>
                     </div>
                 </div>
@@ -210,11 +220,11 @@
                         </div>
                         <div class="col-xs-10 text-right">
                             <div class="medium">
-                                <label id="lblunapprove"  style="color:white">0
+                                <label id="lblunapprove"  style="color:white"><?php echo isset($dashboard->Rotahaler) ? $dashboard->Rotahaler : 0; ?>
                                 </label>
                             </div>
                             <div>
-                                <span style="color:white">Unapprove points</span></div>
+                                <span style="color:white">No.of Rotahaler Changed</span></div>
                         </div>
                     </div>
                 </div>

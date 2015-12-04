@@ -23,7 +23,7 @@ class man_power extends Table {
 
 
     public static function bmViewStatus($conditions = array()) {
-        $sql = "SELECT * FROM respi2_manpower rm INNER JOIN respi2_activity act ON rm.BM_EMP_ID = act.BM_EMP_ID ";
+        $sql = "SELECT SUM(Practicing_Change) as Practicing_Change,SUM(Check_Points) AS Check_Points , SUM(RCP_Drives) as RCP_Drives ,SUM(Rotahaler) AS Rotahaler FROM respi2_manpower rm INNER JOIN respi2_activity act ON rm.BM_EMP_ID = act.BM_EMP_ID ";
         if (!empty($conditions)) {
             $sql .= " WHERE " . join(" ", $conditions);
         }
