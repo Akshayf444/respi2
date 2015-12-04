@@ -1,7 +1,7 @@
 <?php
 class Activity extends Table {
 
-    protected $table_name = "respi2_activity";
+    protected $table_name = "breathfree_activity";
     
     
 }
