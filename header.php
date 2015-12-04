@@ -32,6 +32,6 @@
                     <ul class="nav navbar-top-links navbar-right" style=" float:left !important">
                         <a id="anchr_Home" ><img id="Image1" src="Images/screen.jpg" style="position: relative;height:10%;width: 13%;"></a> 
                         <label id="lblName"  style="color:white"></label>
-                        <a href="Default.aspx"> <i class="fa fa-power-off fa-2x pull-right" style="color:red;position: relative;right: 17px;margin-top: 6%;"></i></a>
+                        <a href="logout.php"> <i class="fa fa-power-off fa-2x pull-right" style="color:red;position: relative;right: 17px;margin-top: 6%;"></i></a>
                     </ul>
                 </nav>

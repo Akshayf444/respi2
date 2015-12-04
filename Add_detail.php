@@ -2,6 +2,10 @@
 require_once("./includes/initialize.php");
 
 session_start();
+if (!isset($_SESSION['bdmemp'])) {
+    header("Location: index.php");
+    exit();
+}
 if(isset($_POST['Rotahaler']))
 {
     $field_array=array(
@@ -16,7 +20,7 @@ if(isset($_POST['Rotahaler']))
     );
     $add=new Activity();
     $query=$add->create($field_array);
-    redirect_to('TankYou.php');
+    header("location:TankYou.php");
 }
 require_once('header.php');
 ?>
