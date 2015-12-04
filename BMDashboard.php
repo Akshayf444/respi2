@@ -270,6 +270,7 @@ $bm_empid = $_SESSION['bdmemp'];
                             $checkPointTopper = array_shift($checkPointTopper);
                         }
                         ?>
+                        
                         <img u="image" src="Images/darkback.jpg" />
                         <div id="Div1"  style="position: absolute; top: 10px;width: 100%; height: 20px; font-size: 23px; color: #fff; line-height: 30px;">Most No Of Rotahaler Check Points</div>
                         <div id="dv_tm2name"  u="caption" t="ZMF|10" style="position: absolute;left:0px; top: 70px; width: 100%; height: 40px; font-size: 43px; color: #fff; line-height: 40px;"><?php echo isset($checkPointTopper->BM_Name) ? $checkPointTopper->BM_Name : 'NA'; ?></div>
