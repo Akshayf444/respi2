@@ -6,6 +6,9 @@ if (!isset($_SESSION['bdmemp'])) {
 }
 require_once("./includes/initialize.php");
 require_once './header.php';
+$conditions = array('GROUP BY rm.BM_EMP_ID');
+$dashboard = man_power::bmViewStatus($conditions);
+
 $bm_empid = $_SESSION['bdmemp'];
 ?>
 <style>
@@ -149,7 +152,7 @@ $bm_empid = $_SESSION['bdmemp'];
     <!-- /.row -->
     <br />
     <?php
-    $conditions = array('rm.BM_EMP_ID = ' . $bm_empid);
+    $conditions = array('WHERE rm.BM_EMP_ID = ' . $bm_empid);
     $dashboard = man_power::bmViewStatus($conditions);
     if (!empty($dashboard)) {
         $dashboard = array_shift($dashboard);
