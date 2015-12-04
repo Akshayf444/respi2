@@ -17,13 +17,14 @@ if (isset($_POST['submit'])) { // Form has been submitted.
         $_SESSION['bdmname'] = $found_bdm->BM_Name;
         $_SESSION['bdmzone'] = $found_bdm->Zone;
         $_SESSION['bdmemp'] = $found_bdm->BM_Emp_Id;
+        $_SESSION['sm_emp'] = $found_bdm->SM_Emp_Id;
         redirect_to("bmdashboard.php");
     } elseif ($found_sm) {
 //        session_start();
-        $_SESSION['ho'] = $found_sm->smsWayID;
-        $_SESSION['ho'] = $found_sm->SM_Name;
-        $_SESSION['ho'] = $found_sm->Zone;
-        $_SESSION['ho'] = $found_sm->SM_Emp_Id;
+        $_SESSION['smsWayID'] = $found_sm->smsWayID;
+        $_SESSION['smname'] = $found_sm->SM_Name;
+        $_SESSION['smzone'] = $found_sm->Zone;
+        $_SESSION['smemp'] = $found_sm->SM_Emp_Id;
         redirect_to("smdashboard.php");
     } else {
         $message = "Incorrect Username/Password.";

@@ -1,7 +1,6 @@
 <?php
 require_once("./includes/initialize.php");
-if(isset($_POST['Rotahaler']))
-{
+if (isset($_POST['Rotahaler'])) {
     
 }
 ?>
@@ -10,7 +9,6 @@ if(isset($_POST['Rotahaler']))
         <h3 class="page-header">Add Detail</h3>
     </div>
 </div>
-
 <div class="row">
     <div class="col-lg-12">
         <div class="panel panel-default">
