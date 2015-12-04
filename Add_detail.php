@@ -1,5 +1,6 @@
 <?php
 require_once("./includes/initialize.php");
+
 session_start();
 if(isset($_POST['Rotahaler']))
 {
@@ -8,9 +9,9 @@ if(isset($_POST['Rotahaler']))
         'Check_Points'=>$_POST['Check_Points'],
         'RCP_Drives'=>$_POST['RCP_Drives'],
         'Rotahaler'=>$_POST['Rotahaler'],
-        'smsWayid'=>$_SESSION['smsWayID'],
-        'BM_Emp_Id'=>$_SESSION['BM_Emp_Id'],
-        'SM_Emp_Id'=>$_SESSION['SM_Emp_Id'],
+        'smsWayid'=>$_SESSION['bdm'],
+        'BM_Emp_Id'=>$_SESSION['bdmemp'],
+        'SM_Emp_Id'=>$_SESSION['sm_emp'],
         'created'=>date('Y-m-d H:i:s'),
     );
     $add=new Activity();
@@ -24,7 +25,6 @@ require_once('header.php');
         <h3 class="page-header">Add Detail</h3>
     </div>
 </div>
-
 <div class="row">
     <div class="col-lg-12">
         <div class="panel panel-default">
