@@ -30,13 +30,5 @@ class man_power extends Table {
         //echo $sql;
         return Query::executeQuery($sql);
     }
-    public static function Activity_list($conditions) {
-        $sql = "SELECT * FROM respi2_manpower rm
-                INNER JOIN respi2_activity ra
-                ON rm.`BM_Emp_Id`=ra.`BM_Emp_Id`
-                WHERE ra.`BM_Emp_Id`=$conditions ";
-        
-        return Query::executeQuery($sql);
-    }
 
 }

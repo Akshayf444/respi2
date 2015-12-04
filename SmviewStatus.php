@@ -31,7 +31,7 @@ require_once('header.php');
                 if (!empty($topper)) {
                     foreach ($topper as $value) {
                         echo '<tr>'
-                        . '<td><a href="Activity_list.php?id='.$value->BM_Emp_Id.'">' . $value->BM_Name . '</a></td>'
+                        . '<td>' . $value->BM_Name . '</td>'
                         . '<td>' . $value->Practicing_Change . '</td>'
                         . '<td>' . $value->Check_Points . '</td>'
                         . '<td>' . $value->RCP_Drives . '</td>'
