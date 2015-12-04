@@ -1,4 +1,10 @@
-<?php require_once("./includes/initialize.php");
+<?php
+session_start();
+if (!isset($_SESSION['bdmemp'])) {
+    header("Location: index.php");
+    exit();
+}
+require_once("./includes/initialize.php");
 require_once './header.php';
 $bm_empid = $_SESSION['bdmemp'];
 ?>
