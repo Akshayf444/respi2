@@ -24,6 +24,7 @@ if(isset($_POST['Rotahaler']))
 }
 require_once('header.php');
 ?>
+<a href="BMDashboard.php"> << Back</a>
 <div class="row">
     <div class="col-lg-12">
         <h3 class="page-header">Add Detail</h3>
