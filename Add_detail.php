@@ -23,6 +23,8 @@ if(isset($_POST['Rotahaler']))
     header("location:TankYou.php");
 }
 require_once('header.php');
+
+
 ?>
 <a href="BMDashboard.php"> << Back</a>
 <div class="row">
