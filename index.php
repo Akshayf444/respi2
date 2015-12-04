@@ -21,13 +21,13 @@ if (isset($_POST['submit'])) { // Form has been submitted.
         $_SESSION['sm_emp'] = $found_bdm->SM_Emp_Id;
         redirect_to("bmdashboard.php");
     } elseif ($found_sm) {
-//        session_start();
+
         $_SESSION['smsWayID'] = $found_sm->smsWayID;
 
         $_SESSION['smname'] = $found_sm->SM_Name;
         $_SESSION['smzone'] = $found_sm->Zone;
         $_SESSION['smemp'] = $found_sm->SM_Emp_Id;
-        redirect_to("smdashboard.php");
+        redirect_to("SMDashboard.php");
     } else {
         $message = "Incorrect Username/Password.";
         flashMessage($message, 'error');

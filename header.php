@@ -6,24 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="" />
         <meta name="author" content="" /><title>Respi2</title>
-<<<<<<< HEAD
 
-        <!-- Bootstrap Core CSS -->
-        <link href="http://instacom.in/Cutisera/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
-
-        <!-- MetisMenu CSS -->
-        <link href="http://instacom.in/Cutisera/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet" />
-
-        <!-- Timeline CSS -->
-        <link href="http://instacom.in/Cutisera/dist/css/timeline.css" rel="stylesheet" />
-
-        <!-- Custom CSS -->
-        <link href="http://instacom.in/Cutisera/dist/css/sb-admin-2.css" rel="stylesheet" />
-
-        <!-- Morris Charts CSS -->
-        <link href="http://instacom.in/Cutisera/bower_components/morrisjs/morris.css" rel="stylesheet" />
-
-=======
         <script src="http://instacom.in/Cutisera/js/jquery-1.9.1.min.js"></script>
         <link href="jquery-ui.css" rel="stylesheet" type="text/css"/>
         <!-- Bootstrap Core CSS -->
@@ -41,7 +24,6 @@
         <!-- Morris Charts CSS -->
         <link href="http://instacom.in/Cutisera/bower_components/morrisjs/morris.css" rel="stylesheet" />
 
->>>>>>> 2706c98f6dfc3736a6a3339d4dac04fee2034ef0
         <!-- Custom Fonts -->
         <link href="http://instacom.in/Cutisera/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" /></asp:ContentPlaceHolder>
 </head>
