@@ -144,8 +144,7 @@ $sm_empid = $_SESSION['smemp'];
 
     <div class="row">
         <div class="col-lg-12" style="padding-top:20px">
-            <a href="Add_detail.php" class="btn btn-success pull-left" >Add</a>
-            <a href="BMviewStatus.php" class="btn btn-info pull-right" >View</a>
+            <a href="SMviewStatus.php" class="btn btn-info pull-right" >View</a>
         </div>
         <!-- /.col-lg-12 -->
     </div>
