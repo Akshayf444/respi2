@@ -22,17 +22,19 @@ require_once('header.php');
             <table class="table table-bordered table-stripped">
                 <tr style="background: #5BC6DE">
                     <th>BM Name</th>
-                    <th>Concept Initiated In Regular Clinic /Camp</th>
-                    <th>Concept Initiated In Regular Activations</th>
+                    <th>Dr Started Practicing Change</th>
+                    <th>Rotahaler Check points</th>
+                    <th>RCP Drives</th>
                     <th>Used Rotahaler Changed</th>
                 </tr>
                 <?php
                 if (!empty($topper)) {
                     foreach ($topper as $value) {
                         echo '<tr>'
-                        . '<td><a href="Activity_list.php?id='.$value->BM_Emp_Id.'">' . $value->BM_Name . '</a></td>'
-                        . '<td>' . $value->regular_clinic . '</td>'
-                        . '<td>' . $value->regular_activation . '</td>'
+                        . '<td>' . $value->BM_Name . '</td>'
+                        . '<td>' . $value->Practicing_Change . '</td>'
+                        . '<td>' . $value->Check_Points . '</td>'
+                        . '<td>' . $value->RCP_Drives . '</td>'
                         . '<td>' . $value->Rotahaler . '</td>'
                         . '</tr>';
                     }

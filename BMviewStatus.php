@@ -53,13 +53,18 @@ require_once('header.php');
 
             <tr>
                 <td>1</td>
-                <td>Concept Initiated In Regular Clinic /Camp</td>
-                <td><?php echo $result->regular_clinic; ?></td>
+                <td>Dr Started Practicing Change</td>
+                <td><?php echo $result->Practicing_Change; ?></td>
             </tr>
             <tr>
                 <td>2</td>
-                <td>Concept Initiated In Regular Activations</td>
-                <td><?php echo $result->regular_activation; ?></td>
+                <td>Rotahaler Check points</td>
+                <td><?php echo $result->Check_Points; ?></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>RCP Drives</td>
+                <td><?php echo $result->RCP_Drives; ?></td>
             </tr>
             <tr>
                 <td>4</td>

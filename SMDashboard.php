@@ -6,7 +6,7 @@ if (!isset($_SESSION['smemp'])) {
 }
 require_once("./includes/initialize.php");
 require_once './header.php';
-$conditions = array('GROUP BY rm.BM_EMP_ID ORDER BY Rotahaler DESC LIMIT 1');
+$conditions = array('GROUP BY rm.BM_EMP_ID ORDER BY Practicing_Change DESC LIMIT 1');
 $topper = man_power::bmViewStatus($conditions);
 
 $sm_empid = $_SESSION['smemp'];
@@ -167,10 +167,10 @@ $sm_empid = $_SESSION['smemp'];
                         </div>
                         <div class="col-xs-10 text-right">
                             <div class="medium">
-                                <label  id="lblPoint" style="color:white"><?php echo isset($dashboard->regular_clinic) ? $dashboard->regular_clinic : 0; ?>
+                                <label  id="lblPoint" style="color:white"><?php echo isset($dashboard->Practicing_Change) ? $dashboard->Practicing_Change : 0; ?>
                                 </label>
                             </div>
-                            <div><span style="color:white">Enter Concept Initiated In Regular Clinic /Camps</span></div>
+                            <div><span style="color:white">Dr Started Practicing Change</span></div>
                         </div>
                     </div>
                 </div>
@@ -186,11 +186,11 @@ $sm_empid = $_SESSION['smemp'];
                         </div>
                         <div class="col-xs-10 text-right">
                             <div class="medium">
-                                <label id="lblRx"  style="color:white"><?php echo isset($dashboard->regular_activation) ? $dashboard->regular_activation : 0; ?>
+                                <label id="lblRx"  style="color:white"><?php echo isset($dashboard->Check_Points) ? $dashboard->Check_Points : 0; ?>
                                 </label>
                             </div>
                             <div>
-                                <span style="color:white">Enter Concept Initiated In Regular Activations</span></div>
+                                <span style="color:white"> Rotahaler Checks Points</span></div>
                         </div>
                     </div>
                 </div>
@@ -200,6 +200,25 @@ $sm_empid = $_SESSION['smemp'];
 
 
     <div class="row" style="padding-top:20px">
+        <div class="col-lg-6 col-md-6">
+            <div style="background-color:#36B37F;border-radius:4px;border:1px solid transparent">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-1">
+                            <i class="glyphicon glyphicon-hourglass fa-3x" style="color:white"></i>
+                        </div>
+                        <div class="col-xs-10 text-right">
+                            <div class="medium">
+                                <label  id="lblpending" style="color:white"><?php echo isset($dashboard->RCP_Drives) ? $dashboard->RCP_Drives : 0; ?>
+                                </label>
+                            </div>
+                            <div><span style="color:white">RCP Drives</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
         <div class="col-lg-6 col-md-6">
             <div style="background-color:#5BC6DE;border-radius:4px;border:1px solid transparent">
                 <div class="panel-heading">
@@ -220,6 +239,7 @@ $sm_empid = $_SESSION['smemp'];
             </div>
         </div>
     </div>
+
     <div class="row">
         <div style="display: block; margin: 10px auto 0 auto; padding: 10px 5px 5px 10px; width: 96%; max-width: 940px; min-width: 240px; font-size: .8em; line-height: 1.5em;">
             <!-- Jssor Slider Begin -->
@@ -237,16 +257,16 @@ $sm_empid = $_SESSION['smemp'];
                         ?>
                         <div id="dv_tm1name"  u="caption" t="FLTTR|R" style="position: absolute; left:0px; top: 70px; width: 100%; height: 20px; font-size: 43px; color: #fff; line-height: 40px;"><?php echo isset($topper->BM_Name) ? $topper->BM_Name : 'NA'; ?></div>
                         <br />
-                        <div id="dv_tm1Region"  u="caption" t="FLTTR|R" style="position: absolute; left:0px; top: 120px; width: 100%;height: 10px; font-size: 36px; color: #fff; line-height: 40px;"><?php echo isset($topper->Rotahaler) ? $topper->Rotahaler : '-'; ?></div>
+                        <div id="dv_tm1Region"  u="caption" t="FLTTR|R" style="position: absolute; left:0px; top: 120px; width: 100%;height: 10px; font-size: 36px; color: #fff; line-height: 40px;"><?php echo isset($topper->Practicing_Change) ? $topper->Practicing_Change : '-'; ?></div>
                         <br />
                         <div id="dv_tm1Rx"  u="caption" t="FLTTR|R" style="position: absolute; left:0px; top: 170px;width: 100%; height: 20px; font-size: 36px;font-weight:600; color:#fff; line-height: 40px;"><?php echo isset($topper->Territory) ? $topper->Territory : 'NA'; ?></div>
                     </div>
-<!--                    <div>
-                        <?php /*$conditions = array('GROUP BY rm.BM_EMP_ID ORDER BY Check_Points DESC LIMIT 1');
+                    <div>
+                        <?php $conditions = array('GROUP BY rm.BM_EMP_ID ORDER BY Check_Points DESC LIMIT 1');
                         $checkPointTopper = man_power::bmViewStatus($conditions);
                         if (!empty($checkPointTopper)) {
                             $checkPointTopper = array_shift($checkPointTopper);
-                        } */
+                        }
                         ?>
                         <img u="image" src="Images/darkback.jpg" />
                         <div id="Div1"  style="position: absolute; top: 10px;width: 100%; height: 20px; font-size: 23px; color: #fff; line-height: 30px;">Most No Of Rotahaler Check Points</div>
@@ -257,11 +277,11 @@ $sm_empid = $_SESSION['smemp'];
                         <div id="dv_tm2Rx"  u="caption" t="ZMF|10" style="position: absolute;left:0px; top: 170px; width: 100%; height: 20px; font-size: 36px;font-weight:600;color:#fff;  line-height: 40px;"><?php echo isset($checkPointTopper->Territory) ? $checkPointTopper->Territory : 'NA'; ?></div>
                     </div>
                     <div>
-                        <?php /*$conditions = array('GROUP BY rm.BM_EMP_ID ORDER BY Rotahaler DESC LIMIT 1');
+                        <?php $conditions = array('GROUP BY rm.BM_EMP_ID ORDER BY Rotahaler DESC LIMIT 1');
                         $RotahalerTopper = man_power::bmViewStatus($conditions);
                         if (!empty($RotahalerTopper)) {
                             $RotahalerTopper = array_shift($RotahalerTopper);
-                        } */
+                        }
                         ?>
                         <img u="image" src="Images/darkback.jpg" />
                         <div id="Div2"  style="position: absolute;  top: 10px;width: 100%; height: 20px; font-size: 23px; color: #fff; line-height: 30px;">Most No Of Rotahaler Changed</div>
@@ -270,7 +290,7 @@ $sm_empid = $_SESSION['smemp'];
                         <div id="dv_tm3Region"  u="caption" t="RTT|10" style="position: absolute;left:0px; top: 120px; width: 100%; height: 40px; font-size: 36px; color: #fff; line-height: 40px;"><?php echo isset($RotahalerTopper->Rotahaler) ? $RotahalerTopper->Rotahaler : 'NA'; ?></div>
                         <br />
                         <div id="dv_tm3Rx"  u="caption" t="RTT|10" style="position: absolute;left:0px;top: 170px; width: 100%; height: 20px; font-size: 36px;font-weight:600; color:#fff; line-height: 40px;"><?php echo isset($RotahalerTopper->Territory) ? $RotahalerTopper->Territory : 'NA'; ?></div>
-                    </div>-->
+                    </div>
                 </div>
                 <a style="display: none" href="http://www.jssor.com">Bootstrap Slider</a>
                 <!-- Trigger -->
