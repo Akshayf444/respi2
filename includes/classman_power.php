@@ -27,7 +27,7 @@ class man_power extends Table {
         if (!empty($conditions)) {
             $sql .= join(" ", $conditions);
         }
-
+        //echo $sql;
         return Query::executeQuery($sql);
     }
 

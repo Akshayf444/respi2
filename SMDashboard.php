@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!isset($_SESSION['bdmemp'])) {
+if (!isset($_SESSION['smemp'])) {
     header("Location: index.php");
     exit();
 }
@@ -9,7 +9,7 @@ require_once './header.php';
 $conditions = array('GROUP BY rm.BM_EMP_ID ORDER BY Practicing_Change DESC LIMIT 1');
 $topper = man_power::bmViewStatus($conditions);
 
-$bm_empid = $_SESSION['bdmemp'];
+$sm_empid = $_SESSION['smemp'];
 ?>
 <style>
     .gvstyling th
@@ -152,7 +152,7 @@ $bm_empid = $_SESSION['bdmemp'];
     <!-- /.row -->
     <br />
     <?php
-    $conditions = array('WHERE rm.BM_EMP_ID = ' . $bm_empid);
+    $conditions = array('WHERE rm.SM_EMP_ID = ' . $sm_empid);
     $dashboard = man_power::bmViewStatus($conditions);
     if (!empty($dashboard)) {
         $dashboard = array_shift($dashboard);
@@ -263,8 +263,7 @@ $bm_empid = $_SESSION['bdmemp'];
                         <div id="dv_tm1Rx"  u="caption" t="FLTTR|R" style="position: absolute; left:0px; top: 170px;width: 100%; height: 20px; font-size: 36px;font-weight:600; color:#fff; line-height: 40px;"><?php echo isset($topper->Territory) ? $topper->Territory : 'NA'; ?></div>
                     </div>
                     <div>
-                        <?php
-                        $conditions = array('GROUP BY rm.BM_EMP_ID ORDER BY Check_Points DESC LIMIT 1');
+                        <?php $conditions = array('GROUP BY rm.BM_EMP_ID ORDER BY Check_Points DESC LIMIT 1');
                         $checkPointTopper = man_power::bmViewStatus($conditions);
                         if (!empty($checkPointTopper)) {
                             $checkPointTopper = array_shift($checkPointTopper);
@@ -279,8 +278,7 @@ $bm_empid = $_SESSION['bdmemp'];
                         <div id="dv_tm2Rx"  u="caption" t="ZMF|10" style="position: absolute;left:0px; top: 170px; width: 100%; height: 20px; font-size: 36px;font-weight:600;color:#fff;  line-height: 40px;"><?php echo isset($checkPointTopper->Territory) ? $checkPointTopper->Territory : 'NA'; ?></div>
                     </div>
                     <div>
-                        <?php
-                        $conditions = array('GROUP BY rm.BM_EMP_ID ORDER BY Rotahaler DESC LIMIT 1');
+                        <?php $conditions = array('GROUP BY rm.BM_EMP_ID ORDER BY Rotahaler DESC LIMIT 1');
                         $RotahalerTopper = man_power::bmViewStatus($conditions);
                         if (!empty($RotahalerTopper)) {
                             $RotahalerTopper = array_shift($RotahalerTopper);

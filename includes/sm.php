@@ -12,7 +12,6 @@ class sm extends Table {
             $sql .= "WHERE SM_Emp_Id = '{$id}' ";
             $sql .= " AND  SM_Password = '{$password}' ";
             $sql .= " LIMIT 1";
-            //echo $sql;
             $result_array = Query::executeQuery($sql);
             return !empty($result_array) ? array_shift($result_array) : false;
         }
