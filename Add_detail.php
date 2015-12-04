@@ -1,9 +1,23 @@
 <?php
 require_once("./includes/initialize.php");
+session_start();
 if(isset($_POST['Rotahaler']))
 {
-    
+    $field_array=array(
+        'Practicing_Change'=>$_POST['Practicing_Change'],
+        'Check_Points'=>$_POST['Check_Points'],
+        'RCP_Drives'=>$_POST['RCP_Drives'],
+        'Rotahaler'=>$_POST['Rotahaler'],
+        'smsWayid'=>$_SESSION['smsWayID'],
+        'BM_Emp_Id'=>$_SESSION['BM_Emp_Id'],
+        'SM_Emp_Id'=>$_SESSION['SM_Emp_Id'],
+        'created'=>date('Y-m-d H:i:s'),
+    );
+    $add=new Activity();
+    $query=$add->create($field_array);
+    redirect_to('TankYou.php');
 }
+require_once('header.php');
 ?>
 <div class="row">
     <div class="col-lg-12">
@@ -37,3 +51,6 @@ if(isset($_POST['Rotahaler']))
         </div>
     </div>
 </div>
+<?php 
+require_once ('footer.php');
+?>
