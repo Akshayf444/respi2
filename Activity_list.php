@@ -7,14 +7,17 @@ if (!isset($_SESSION['smemp'])) {
     exit();
 }
 $sm_empid = $_SESSION['smemp'];
+if(isset($_GET['id']))
+{
+    $bm_emp_id=$_GET['id'];
+    $topper = man_power::Activity_list($bm_emp_id);
+}
 
-$conditions = array("WHERE act.SM_EMP_ID = '$sm_empid' GROUP BY rm.BM_EMP_ID ");
-$topper = man_power::bmViewStatus($conditions);
 
 require_once('header.php');
 ?>
 <script src="jquery-ui.js" type="text/javascript"></script>
-<a href="SMDashboard.php"> << Back</a>
+<a href="SMviewStatus.php"> << Back</a>
 
 <div class="row">
     <div class="col-lg-12">
@@ -26,16 +29,18 @@ require_once('header.php');
                     <th>Rotahaler Check points</th>
                     <th>RCP Drives</th>
                     <th>Used Rotahaler Changed</th>
+                    <th>Date</th>
                 </tr>
                 <?php
                 if (!empty($topper)) {
                     foreach ($topper as $value) {
                         echo '<tr>'
-                        . '<td><a href="Activity_list.php?id='.$value->BM_Emp_Id.'">' . $value->BM_Name . '</a></td>'
+                        . '<td>' . $value->BM_Name . '</td>'
                         . '<td>' . $value->Practicing_Change . '</td>'
                         . '<td>' . $value->Check_Points . '</td>'
                         . '<td>' . $value->RCP_Drives . '</td>'
                         . '<td>' . $value->Rotahaler . '</td>'
+                        . '<td>' . date('Y-m-d',  strtotime($value->created)) . '</td>'
                         . '</tr>';
                     }
                 }
