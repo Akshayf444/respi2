@@ -52,7 +52,7 @@ if (isset($_SESSION['message'])) {
         <title>Title</title>
 
         <!-- Bootstrap Core CSS -->
-         <link href="http://instacom.in/Cutisera/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="http://instacom.in/Cutisera/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -68,7 +68,7 @@ if (isset($_SESSION['message'])) {
                     <div class="panel panel-default">
                         <div class="panel-heading" style="text-align: center">
 
-                            <img  src="images/logox.png" width="45%" >
+                            <img  src="images/screen.png" width="50%" >
 
                         </div>
                         <div class="panel-body">
