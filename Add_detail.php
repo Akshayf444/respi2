@@ -35,7 +35,7 @@ require_once('header.php');
             <form action="Add_detail.php" method="POST">
                 <div class="panel-body"> 
                     <div class="form-group">
-                        <input type="number" name="Practicing_Change" class="form-control" placeholder="Dr Started Practicing Change" required="">
+                        <input type="number" name="Practicing_Change" class="form-control" placeholder="Drs. Started Practicing Change" required="">
                     </div>
                     <div class="form-group">
                         <input type="number" name="Check_Points" class="form-control" placeholder="Rotahaler Check Points" required="">

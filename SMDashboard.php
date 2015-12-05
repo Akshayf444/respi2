@@ -170,7 +170,7 @@ $sm_empid = $_SESSION['smemp'];
                                 <label  id="lblPoint" style="color:white"><?php echo isset($dashboard->Practicing_Change) ? $dashboard->Practicing_Change : 0; ?>
                                 </label>
                             </div>
-                            <div><span style="color:white">Dr Started Practicing Change</span></div>
+                            <div><span style="color:white">Drs. Started Practicing Change</span></div>
                         </div>
                     </div>
                 </div>

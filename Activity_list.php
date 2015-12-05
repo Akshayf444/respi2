@@ -7,9 +7,8 @@ if (!isset($_SESSION['smemp'])) {
     exit();
 }
 $sm_empid = $_SESSION['smemp'];
-if(isset($_GET['id']))
-{
-    $bm_emp_id=$_GET['id'];
+if (isset($_GET['id'])) {
+    $bm_emp_id = $_GET['id'];
     $topper = man_power::Activity_list($bm_emp_id);
 }
 
@@ -25,7 +24,7 @@ require_once('header.php');
             <table class="table table-bordered table-stripped">
                 <tr style="background: #5BC6DE">
                     <th>BM Name</th>
-                    <th>Dr Started Practicing Change</th>
+                    <th>Drs. Started Practicing Change</th>
                     <th>Rotahaler Check points</th>
                     <th>RCP Drives</th>
                     <th>Used Rotahaler Changed</th>
@@ -40,7 +39,7 @@ require_once('header.php');
                         . '<td>' . $value->Check_Points . '</td>'
                         . '<td>' . $value->RCP_Drives . '</td>'
                         . '<td>' . $value->Rotahaler . '</td>'
-                        . '<td>' . date('Y-m-d',  strtotime($value->created)) . '</td>'
+                        . '<td>' . date('Y-m-d', strtotime($value->created)) . '</td>'
                         . '</tr>';
                     }
                 }

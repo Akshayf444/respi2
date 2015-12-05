@@ -53,7 +53,7 @@ require_once('header.php');
 
             <tr>
                 <td>1</td>
-                <td>Dr Started Practicing Change</td>
+                <td>Drs. Started Practicing Change</td>
                 <td><?php echo $result->Practicing_Change; ?></td>
             </tr>
             <tr>

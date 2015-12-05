@@ -22,7 +22,7 @@ require_once('header.php');
             <table class="table table-bordered table-stripped">
                 <tr style="background: #5BC6DE">
                     <th>BM Name</th>
-                    <th>Dr Started Practicing Change</th>
+                    <th>Drs. Started Practicing Change</th>
                     <th>Rotahaler Check points</th>
                     <th>RCP Drives</th>
                     <th>No Rotahaler Changed</th>
