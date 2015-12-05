@@ -259,7 +259,7 @@ $sm_empid = $_SESSION['smemp'];
                         <br />
                         <div id="dv_tm1Region"  u="caption" t="FLTTR|R" style="position: absolute; left:0px; top: 120px; width: 100%;height: 10px; font-size: 36px; color: #fff; line-height: 40px;"><?php echo isset($topper->Practicing_Change) ? $topper->Practicing_Change : '-'; ?></div>
                         <br />
-                        <div id="dv_tm1Rx"  u="caption" t="FLTTR|R" style="position: absolute; left:0px; top: 170px;width: 100%; height: 20px; font-size: 36px;font-weight:600; color:#fff; line-height: 40px;"><?php echo isset($topper->Territory) ? $topper->Territory : 'NA'; ?></div>
+                        <div id="dv_tm1Rx"  u="caption" t="FLTTR|R" style="position: absolute; left:0px; top: 170px;width: 100%; height: 20px; font-size: 36px;font-weight:600; color:#fff; line-height: 40px;"><?php echo isset($topper->Region) ? $topper->Region : 'NA'; ?></div>
                     </div>
                     <div>
                         <?php $conditions = array('GROUP BY rm.smswayid ORDER BY Check_Points DESC LIMIT 1');
@@ -274,7 +274,7 @@ $sm_empid = $_SESSION['smemp'];
                         <br />
                         <div id="dv_tm2Region"  u="caption" t="ZMF|10" style="position: absolute; left:0px;top: 120px; width: 100%; height: 40px; font-size: 36px; color: #fff; line-height: 40px;"><?php echo isset($checkPointTopper->Check_Points) ? $checkPointTopper->Check_Points : '-'; ?></div>
                         <br />
-                        <div id="dv_tm2Rx"  u="caption" t="ZMF|10" style="position: absolute;left:0px; top: 170px; width: 100%; height: 20px; font-size: 36px;font-weight:600;color:#fff;  line-height: 40px;"><?php echo isset($checkPointTopper->Territory) ? $checkPointTopper->Territory : 'NA'; ?></div>
+                        <div id="dv_tm2Rx"  u="caption" t="ZMF|10" style="position: absolute;left:0px; top: 170px; width: 100%; height: 20px; font-size: 36px;font-weight:600;color:#fff;  line-height: 40px;"><?php echo isset($checkPointTopper->Region) ? $checkPointTopper->Region : 'NA'; ?></div>
                     </div>
                     <div>
                         <?php $conditions = array('GROUP BY rm.smswayid ORDER BY Rotahaler DESC LIMIT 1');
@@ -289,7 +289,7 @@ $sm_empid = $_SESSION['smemp'];
                         <br />
                         <div id="dv_tm3Region"  u="caption" t="RTT|10" style="position: absolute;left:0px; top: 120px; width: 100%; height: 40px; font-size: 36px; color: #fff; line-height: 40px;"><?php echo isset($RotahalerTopper->Rotahaler) ? $RotahalerTopper->Rotahaler : 'NA'; ?></div>
                         <br />
-                        <div id="dv_tm3Rx"  u="caption" t="RTT|10" style="position: absolute;left:0px;top: 170px; width: 100%; height: 20px; font-size: 36px;font-weight:600; color:#fff; line-height: 40px;"><?php echo isset($RotahalerTopper->Territory) ? $RotahalerTopper->Territory : 'NA'; ?></div>
+                        <div id="dv_tm3Rx"  u="caption" t="RTT|10" style="position: absolute;left:0px;top: 170px; width: 100%; height: 20px; font-size: 36px;font-weight:600; color:#fff; line-height: 40px;"><?php echo isset($RotahalerTopper->Region) ? $RotahalerTopper->Region : 'NA'; ?></div>
                     </div>
                 </div>
                 <a style="display: none" href="http://www.jssor.com">Bootstrap Slider</a>
