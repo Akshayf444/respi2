@@ -28,11 +28,11 @@
         <link href="http://instacom.in/Cutisera/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" /></asp:ContentPlaceHolder>
 </head>
 <body>
+
     <div id="wrapper">
-        <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0;background-image:url(Images/strip.png); background-repeat:no-repeat; background-size: 100% 122px;">
             <ul class="nav navbar-top-links navbar-right" style=" float:left !important">
-                <a id="anchr_Home" ><img id="Image1" src="Images/screen.png" style="position: relative;height:10%;width: 13%;"></a> 
+                <a id="anchr_Home" ><img id="Image1" src="Images/screen.png" style="position: relative;height:9%;width: 13%;"></a> 
 
                 <label id="lblName"  style="color:white">Welcome <?php
                     if (isset($_SESSION['bdmname'])) {
