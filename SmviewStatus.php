@@ -25,7 +25,7 @@ require_once('header.php');
                     <th>Dr Started Practicing Change</th>
                     <th>Rotahaler Check points</th>
                     <th>RCP Drives</th>
-                    <th>Used Rotahaler Changed</th>
+                    <th>No Rotahaler Changed</th>
                 </tr>
                 <?php
                 if (!empty($topper)) {

@@ -6,10 +6,10 @@ if (!isset($_SESSION['bdmemp'])) {
 }
 require_once("./includes/initialize.php");
 require_once './header.php';
-$conditions = array('GROUP BY rm.BM_EMP_ID ORDER BY Practicing_Change DESC LIMIT 1');
+$conditions = array('GROUP BY rm.smsWayid ORDER BY Practicing_Change DESC LIMIT 1');
 $topper = man_power::bmViewStatus($conditions);
 
-$bm_empid = $_SESSION['bdmemp'];
+$bm_empid = $_SESSION['bdm'];
 ?>
 <style>
     .gvstyling th
@@ -35,7 +35,6 @@ $bm_empid = $_SESSION['bdmemp'];
         padding-left:10px;
     }
 </style>
-
 
 <!-- Bootstrap Core CSS -->
 <script src="http://instacom.in/Cutisera/js/jquery-1.9.1.min.js"></script>
@@ -152,7 +151,7 @@ $bm_empid = $_SESSION['bdmemp'];
     <!-- /.row -->
     <br />
     <?php
-    $conditions = array('WHERE rm.BM_EMP_ID = ' . $bm_empid);
+    $conditions = array('WHERE rm.smsWayid = ' . $bm_empid);
     $dashboard = man_power::bmViewStatus($conditions);
     if (!empty($dashboard)) {
         $dashboard = array_shift($dashboard);
@@ -264,7 +263,7 @@ $bm_empid = $_SESSION['bdmemp'];
                     </div>
                     <div>
                         <?php
-                        $conditions = array('GROUP BY rm.BM_EMP_ID ORDER BY Check_Points DESC LIMIT 1');
+                        $conditions = array('GROUP BY rm.smsWayid ORDER BY Check_Points DESC LIMIT 1');
                         $checkPointTopper = man_power::bmViewStatus($conditions);
                         if (!empty($checkPointTopper)) {
                             $checkPointTopper = array_shift($checkPointTopper);
@@ -280,7 +279,7 @@ $bm_empid = $_SESSION['bdmemp'];
                     </div>
                     <div>
                         <?php
-                        $conditions = array('GROUP BY rm.BM_EMP_ID ORDER BY Rotahaler DESC LIMIT 1');
+                        $conditions = array('GROUP BY rm.smsWayid ORDER BY Rotahaler DESC LIMIT 1');
                         $RotahalerTopper = man_power::bmViewStatus($conditions);
                         if (!empty($RotahalerTopper)) {
                             $RotahalerTopper = array_shift($RotahalerTopper);

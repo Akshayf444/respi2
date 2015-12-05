@@ -42,6 +42,6 @@
                     }
                     ?></label>
 
-                <a href="logout.php"> <i class="fa fa-power-off fa-2x pull-right" style="color:red;position: relative;right: 17px;margin-top: 6%;"></i></a>
+                <a href="logout.php"> <i class="fa fa-power-off fa-2x pull-right" style="color:red;position: relative;right: 17px;margin-top: 1%;"></i></a>
             </ul>
         </nav>

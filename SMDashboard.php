@@ -6,7 +6,7 @@ if (!isset($_SESSION['smemp'])) {
 }
 require_once("./includes/initialize.php");
 require_once './header.php';
-$conditions = array('GROUP BY rm.BM_EMP_ID ORDER BY Practicing_Change DESC LIMIT 1');
+$conditions = array('GROUP BY rm.smswayid ORDER BY Practicing_Change DESC LIMIT 1');
 $topper = man_power::bmViewStatus($conditions);
 
 $sm_empid = $_SESSION['smemp'];
@@ -262,7 +262,7 @@ $sm_empid = $_SESSION['smemp'];
                         <div id="dv_tm1Rx"  u="caption" t="FLTTR|R" style="position: absolute; left:0px; top: 170px;width: 100%; height: 20px; font-size: 36px;font-weight:600; color:#fff; line-height: 40px;"><?php echo isset($topper->Territory) ? $topper->Territory : 'NA'; ?></div>
                     </div>
                     <div>
-                        <?php $conditions = array('GROUP BY rm.BM_EMP_ID ORDER BY Check_Points DESC LIMIT 1');
+                        <?php $conditions = array('GROUP BY rm.smswayid ORDER BY Check_Points DESC LIMIT 1');
                         $checkPointTopper = man_power::bmViewStatus($conditions);
                         if (!empty($checkPointTopper)) {
                             $checkPointTopper = array_shift($checkPointTopper);
@@ -277,7 +277,7 @@ $sm_empid = $_SESSION['smemp'];
                         <div id="dv_tm2Rx"  u="caption" t="ZMF|10" style="position: absolute;left:0px; top: 170px; width: 100%; height: 20px; font-size: 36px;font-weight:600;color:#fff;  line-height: 40px;"><?php echo isset($checkPointTopper->Territory) ? $checkPointTopper->Territory : 'NA'; ?></div>
                     </div>
                     <div>
-                        <?php $conditions = array('GROUP BY rm.BM_EMP_ID ORDER BY Rotahaler DESC LIMIT 1');
+                        <?php $conditions = array('GROUP BY rm.smswayid ORDER BY Rotahaler DESC LIMIT 1');
                         $RotahalerTopper = man_power::bmViewStatus($conditions);
                         if (!empty($RotahalerTopper)) {
                             $RotahalerTopper = array_shift($RotahalerTopper);
