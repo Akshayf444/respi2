@@ -162,9 +162,9 @@ $sm_empid = $_SESSION['smemp'];
             <div style="background-color:#f0ad4e;border-radius:4px;border:1px solid transparent">
                 <div class="panel-heading">
                     <div class="row">
-                        <div class="col-xs-1">
+<!--                        <div class="col-xs-1">
                             <i class="glyphicon glyphicon-education fa-3x" style="color:white"></i>
-                        </div>
+                        </div>-->
                         <div class="col-xs-10 text-right">
                             <div class="medium">
                                 <label  id="lblPoint" style="color:white"><?php echo isset($dashboard->Practicing_Change) ? $dashboard->Practicing_Change : 0; ?>
@@ -181,9 +181,9 @@ $sm_empid = $_SESSION['smemp'];
             <div style="background-color:#DE7F5B;border-radius:4px;border:1px solid transparent">
                 <div class="panel-heading">
                     <div class="row">
-                        <div class="col-xs-1">
+<!--                        <div class="col-xs-1">
                             <i class="glyphicon glyphicon-align-center fa-3x" style="color:white"></i>
-                        </div>
+                        </div>-->
                         <div class="col-xs-10 text-right">
                             <div class="medium">
                                 <label id="lblRx"  style="color:white"><?php echo isset($dashboard->Check_Points) ? $dashboard->Check_Points : 0; ?>
@@ -204,9 +204,9 @@ $sm_empid = $_SESSION['smemp'];
             <div style="background-color:#36B37F;border-radius:4px;border:1px solid transparent">
                 <div class="panel-heading">
                     <div class="row">
-                        <div class="col-xs-1">
+<!--                        <div class="col-xs-1">
                             <i class="glyphicon glyphicon-hourglass fa-3x" style="color:white"></i>
-                        </div>
+                        </div>-->
                         <div class="col-xs-10 text-right">
                             <div class="medium">
                                 <label  id="lblpending" style="color:white"><?php echo isset($dashboard->RCP_Drives) ? $dashboard->RCP_Drives : 0; ?>
@@ -223,9 +223,9 @@ $sm_empid = $_SESSION['smemp'];
             <div style="background-color:#5BC6DE;border-radius:4px;border:1px solid transparent">
                 <div class="panel-heading">
                     <div class="row">
-                        <div class="col-xs-1">
+<!--                        <div class="col-xs-1">
                             <i class="glyphicon glyphicon-remove fa-3x" style="color:white"></i>
-                        </div>
+                        </div>-->
                         <div class="col-xs-10 text-right">
                             <div class="medium">
                                 <label id="lblunapprove"  style="color:white"><?php echo isset($dashboard->Rotahaler) ? $dashboard->Rotahaler : 0; ?>
