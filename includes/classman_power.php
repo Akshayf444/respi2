@@ -63,6 +63,18 @@ class man_power extends Table {
         }
     }
 
+    public static function BMList() {
+        $sql = "SELECT DISTINCT(`BM_Emp_Id`) As BM_Emp_Id,`BM_Name` , `BM_Mobile` FROM `respi2_manpower`";
+        return Query::executeQuery($sql);
+    }
+    
+
+    public static function BM_by_id($id) {
+        $sql = "SELECT DISTINCT(`BM_Emp_Id`) As BM_Emp_Id,`BM_Name` , `BM_Mobile` FROM `respi2_manpower` where BM_Emp_Id=$id";
+        $result_array = Query::executeQuery($sql);
+        return !empty($result_array) ? array_shift($result_array) : false;
+    }
+
     public static function SMList() {
         $sql = "SELECT DISTINCT(`SM_Emp_Id`) As SM_Emp_Id,`SM_Name` , `SM_Mobile` FROM `respi2_manpower`";
         return Query::executeQuery($sql);
