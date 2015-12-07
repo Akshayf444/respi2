@@ -34,7 +34,7 @@ require_once('header.php');
     <div class="col-lg-12">
         <div class="panel panel-default">
             <form action="Add_detail.php" method="POST">
-                <div class="panel-heading">Enter Details For Reporting TM</div>
+                <div class="panel-heading">Enter Details For Reporting TMs</div>
                 <div class="panel-body"> 
                     <div class="form-group">
                         <input type="number" name="Practicing_Change" class="form-control" placeholder="Drs. Started Practicing Change" required="">

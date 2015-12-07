@@ -1,15 +1,14 @@
 <?php
 session_start();
-if (!isset($_SESSION['bdmemp'])) {
+if (!isset($_SESSION['adminname'])) {
     header("Location: index.php");
     exit();
 }
-require_once("./includes/initialize.php");
+require_once("../includes/initialize.php");
 require_once './header.php';
-$conditions = array('GROUP BY rm.smsWayid ORDER BY Practicing_Change DESC LIMIT 1');
+$conditions = array('GROUP BY rm.smswayid ORDER BY Practicing_Change DESC LIMIT 1');
 $topper = man_power::bmViewStatus($conditions);
 
-$bm_empid = $_SESSION['bdm'];
 ?>
 <style>
     .gvstyling th
@@ -35,6 +34,7 @@ $bm_empid = $_SESSION['bdm'];
         padding-left:10px;
     }
 </style>
+
 
 <!-- Bootstrap Core CSS -->
 <script src="http://instacom.in/Cutisera/js/jquery-1.9.1.min.js"></script>
@@ -143,16 +143,15 @@ $bm_empid = $_SESSION['bdm'];
 
     <div class="row">
         <div class="col-lg-12" style="padding-top:20px">
-            <a href="Add_detail.php" class="btn btn-success pull-left" >Add</a>
-            <a href="BMviewStatus.php" class="btn btn-info pull-right" >View</a>
+            <a href="viewStatus.php" class="btn btn-info pull-right" >View</a>
         </div>
         <!-- /.col-lg-12 -->
     </div>
     <!-- /.row -->
     <br />
     <?php
-    $conditions = array('WHERE rm.smsWayid = ' . $bm_empid);
-    $dashboard = man_power::bmViewStatus($conditions);
+   // $conditions = array('WHERE rm.SM_EMP_ID = ' . $sm_empid);
+    $dashboard = man_power::bmViewStatus();
     if (!empty($dashboard)) {
         $dashboard = array_shift($dashboard);
     }
@@ -232,7 +231,7 @@ $bm_empid = $_SESSION['bdm'];
                                 </label>
                             </div>
                             <div>
-                                <span style="color:white">No.of Rotahaler Changed</span></div>
+                                <span style="color:white">No. of Rotahaler Changed</span></div>
                         </div>
                     </div>
                 </div>
@@ -248,7 +247,7 @@ $bm_empid = $_SESSION['bdm'];
                 <!-- Slides Container -->
                 <div u="slides" style="cursor: move; text-align:center; position: absolute; left: 0px; top: 0px; width: 600px; height: 300px; overflow: hidden;">
                     <div>
-                        <img u="image" src="Images/darkback.jpg" />
+                        <img u="image" src="http://instacom.in/respi2/Images/darkback.jpg" />
                         <div id="dv_top"  style="position: absolute; top: 10px;width: 100%; height: 20px; font-size: 25px; font-weight:500; color: #fff; line-height: 30px;"> Most No. Of Doctors Converted </div>
                         <?php
                         if (!empty($topper)) {
@@ -262,14 +261,13 @@ $bm_empid = $_SESSION['bdm'];
                         <div id="dv_tm1Rx"  u="caption" t="FLTTR|R" style="position: absolute; left:0px; top: 170px;width: 100%; height: 20px; font-size: 36px;font-weight:600; color:#fff; line-height: 40px;"><?php echo isset($topper->Region) ? $topper->Region : 'NA'; ?></div>
                     </div>
                     <div>
-                        <?php
-                        $conditions = array('GROUP BY rm.smsWayid ORDER BY Check_Points DESC LIMIT 1');
+                        <?php $conditions = array('GROUP BY rm.smswayid ORDER BY Check_Points DESC LIMIT 1');
                         $checkPointTopper = man_power::bmViewStatus($conditions);
                         if (!empty($checkPointTopper)) {
                             $checkPointTopper = array_shift($checkPointTopper);
                         }
                         ?>
-                        <img u="image" src="Images/darkback.jpg" />
+                        <img u="image" src="http://instacom.in/respi2/Images/darkback.jpg" />
                         <div id="Div1"  style="position: absolute; top: 10px;width: 100%; height: 20px; font-size: 23px; color: #fff; line-height: 30px;">Most No. Of Rotahaler Check Points</div>
                         <div id="dv_tm2name"  u="caption" t="ZMF|10" style="position: absolute;left:0px; top: 70px; width: 100%; height: 40px; font-size: 43px; color: #fff; line-height: 40px;"><?php echo isset($checkPointTopper->BM_Name) ? $checkPointTopper->BM_Name : 'NA'; ?></div>
                         <br />
@@ -278,14 +276,13 @@ $bm_empid = $_SESSION['bdm'];
                         <div id="dv_tm2Rx"  u="caption" t="ZMF|10" style="position: absolute;left:0px; top: 170px; width: 100%; height: 20px; font-size: 36px;font-weight:600;color:#fff;  line-height: 40px;"><?php echo isset($checkPointTopper->Region) ? $checkPointTopper->Region : 'NA'; ?></div>
                     </div>
                     <div>
-                        <?php
-                        $conditions = array('GROUP BY rm.smsWayid ORDER BY Rotahaler DESC LIMIT 1');
+                        <?php $conditions = array('GROUP BY rm.smswayid ORDER BY Rotahaler DESC LIMIT 1');
                         $RotahalerTopper = man_power::bmViewStatus($conditions);
                         if (!empty($RotahalerTopper)) {
                             $RotahalerTopper = array_shift($RotahalerTopper);
                         }
                         ?>
-                        <img u="image" src="Images/darkback.jpg" />
+                        <img u="image" src="http://instacom.in/respi2/Images/darkback.jpg" />
                         <div id="Div2"  style="position: absolute;  top: 10px;width: 100%; height: 20px; font-size: 23px; color: #fff; line-height: 30px;">Most No. Of Rotahaler Changed</div>
                         <div id="dv_tm3name"  u="caption" t="RTT|10" style="position: absolute;left:0px;  top: 70px; width: 100%; height: 40px; font-size: 43px; color: #fff; line-height: 40px;"><?php echo isset($RotahalerTopper->BM_Name) ? $RotahalerTopper->BM_Name : 'NA'; ?></div>
                         <br />

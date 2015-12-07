@@ -27,7 +27,7 @@ require_once('header.php');
                     <th>Drs. Started Practicing Change</th>
                     <th>Rotahaler Check points</th>
                     <th>RCP Drives</th>
-                    <th>Used Rotahaler Changed</th>
+                    <th>No of Rotahaler Changed</th>
                     <th>Date</th>
                 </tr>
                 <?php
@@ -39,7 +39,7 @@ require_once('header.php');
                         . '<td>' . $value->Check_Points . '</td>'
                         . '<td>' . $value->RCP_Drives . '</td>'
                         . '<td>' . $value->Rotahaler . '</td>'
-                        . '<td>' . date('Y-m-d', strtotime($value->created)) . '</td>'
+                        . '<td>' . date('d-m-Y', strtotime($value->created)) . '</td>'
                         . '</tr>';
                     }
                 }

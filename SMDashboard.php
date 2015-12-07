@@ -165,7 +165,7 @@ $sm_empid = $_SESSION['smemp'];
 <!--                        <div class="col-xs-1">
                             <i class="glyphicon glyphicon-education fa-3x" style="color:white"></i>
                         </div>-->
-                        <div class="col-xs-10 text-right">
+                        <div class="col-xs-12 text-right">
                             <div class="medium">
                                 <label  id="lblPoint" style="color:white"><?php echo isset($dashboard->Practicing_Change) ? $dashboard->Practicing_Change : 0; ?>
                                 </label>
@@ -184,13 +184,13 @@ $sm_empid = $_SESSION['smemp'];
 <!--                        <div class="col-xs-1">
                             <i class="glyphicon glyphicon-align-center fa-3x" style="color:white"></i>
                         </div>-->
-                        <div class="col-xs-10 text-right">
+                        <div class="col-xs-12 text-right">
                             <div class="medium">
                                 <label id="lblRx"  style="color:white"><?php echo isset($dashboard->Check_Points) ? $dashboard->Check_Points : 0; ?>
                                 </label>
                             </div>
                             <div>
-                                <span style="color:white"> Rotahaler Checks Points</span></div>
+                                <span style="color:white"> Rotahaler Check Points</span></div>
                         </div>
                     </div>
                 </div>
@@ -207,7 +207,7 @@ $sm_empid = $_SESSION['smemp'];
 <!--                        <div class="col-xs-1">
                             <i class="glyphicon glyphicon-hourglass fa-3x" style="color:white"></i>
                         </div>-->
-                        <div class="col-xs-10 text-right">
+                        <div class="col-xs-12 text-right">
                             <div class="medium">
                                 <label  id="lblpending" style="color:white"><?php echo isset($dashboard->RCP_Drives) ? $dashboard->RCP_Drives : 0; ?>
                                 </label>
@@ -226,13 +226,13 @@ $sm_empid = $_SESSION['smemp'];
 <!--                        <div class="col-xs-1">
                             <i class="glyphicon glyphicon-remove fa-3x" style="color:white"></i>
                         </div>-->
-                        <div class="col-xs-10 text-right">
+                        <div class="col-xs-12 text-right">
                             <div class="medium">
                                 <label id="lblunapprove"  style="color:white"><?php echo isset($dashboard->Rotahaler) ? $dashboard->Rotahaler : 0; ?>
                                 </label>
                             </div>
                             <div>
-                                <span style="color:white">No.of Rotahaler Changed</span></div>
+                                <span style="color:white">No. of Rotahaler Changed</span></div>
                         </div>
                     </div>
                 </div>
@@ -249,7 +249,7 @@ $sm_empid = $_SESSION['smemp'];
                 <div u="slides" style="cursor: move; text-align:center; position: absolute; left: 0px; top: 0px; width: 600px; height: 300px; overflow: hidden;">
                     <div>
                         <img u="image" src="Images/darkback.jpg" />
-                        <div id="dv_top"  style="position: absolute; top: 10px;width: 100%; height: 20px; font-size: 25px; font-weight:500; color: #fff; line-height: 30px;"> Most No Of Doctor Converted </div>
+                        <div id="dv_top"  style="position: absolute; top: 10px;width: 100%; height: 20px; font-size: 25px; font-weight:500; color: #fff; line-height: 30px;"> Most No. Of Doctors Converted </div>
                         <?php
                         if (!empty($topper)) {
                             $topper = array_shift($topper);
@@ -269,7 +269,7 @@ $sm_empid = $_SESSION['smemp'];
                         }
                         ?>
                         <img u="image" src="Images/darkback.jpg" />
-                        <div id="Div1"  style="position: absolute; top: 10px;width: 100%; height: 20px; font-size: 23px; color: #fff; line-height: 30px;">Most No Of Rotahaler Check Points</div>
+                        <div id="Div1"  style="position: absolute; top: 10px;width: 100%; height: 20px; font-size: 23px; color: #fff; line-height: 30px;">Most No. Of Rotahaler Check Points</div>
                         <div id="dv_tm2name"  u="caption" t="ZMF|10" style="position: absolute;left:0px; top: 70px; width: 100%; height: 40px; font-size: 43px; color: #fff; line-height: 40px;"><?php echo isset($checkPointTopper->BM_Name) ? $checkPointTopper->BM_Name : 'NA'; ?></div>
                         <br />
                         <div id="dv_tm2Region"  u="caption" t="ZMF|10" style="position: absolute; left:0px;top: 120px; width: 100%; height: 40px; font-size: 36px; color: #fff; line-height: 40px;"><?php echo isset($checkPointTopper->Check_Points) ? $checkPointTopper->Check_Points : '-'; ?></div>
@@ -284,7 +284,7 @@ $sm_empid = $_SESSION['smemp'];
                         }
                         ?>
                         <img u="image" src="Images/darkback.jpg" />
-                        <div id="Div2"  style="position: absolute;  top: 10px;width: 100%; height: 20px; font-size: 23px; color: #fff; line-height: 30px;">Most No Of Rotahaler Changed</div>
+                        <div id="Div2"  style="position: absolute;  top: 10px;width: 100%; height: 20px; font-size: 23px; color: #fff; line-height: 30px;">Most No. Of Rotahaler Changed</div>
                         <div id="dv_tm3name"  u="caption" t="RTT|10" style="position: absolute;left:0px;  top: 70px; width: 100%; height: 40px; font-size: 43px; color: #fff; line-height: 40px;"><?php echo isset($RotahalerTopper->BM_Name) ? $RotahalerTopper->BM_Name : 'NA'; ?></div>
                         <br />
                         <div id="dv_tm3Region"  u="caption" t="RTT|10" style="position: absolute;left:0px; top: 120px; width: 100%; height: 40px; font-size: 36px; color: #fff; line-height: 40px;"><?php echo isset($RotahalerTopper->Rotahaler) ? $RotahalerTopper->Rotahaler : 'NA'; ?></div>

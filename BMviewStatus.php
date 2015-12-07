@@ -10,7 +10,7 @@ $bm_empid = $_SESSION['bdm'];
 if (isset($_POST['getReport'])) {
     $from = $_POST['from'];
     $to = $_POST['to'];
-    $conditions = array("WHERE rm.smsWayid = " . $bm_empid, "AND act.created BETWEEN '$from' AND '$to'  ");
+    $conditions = array("WHERE rm.smsWayid = " . $bm_empid, "AND DATE_FORMAT(act.created,'%Y-%m-%d') BETWEEN '$from' AND '$to'  ");
     $result = man_power::bmViewStatus($conditions);
 } else {
     $conditions = array("WHERE rm.smsWayid = " . $bm_empid);
@@ -27,11 +27,11 @@ require_once('header.php');
         <form action="BMviewStatus.php" method="POST">
             <div class="form-group">
                 <label class="control-label">From</label>
-                <input type="text" class="form-control from" value="<?php echo isset($_POST['from']) ? $_POST['from'] : ''; ?>" name="from" placeholder="From"/>
+                <input type="text" class="form-control from" autocomplete="off" value="<?php echo isset($_POST['from']) ? $_POST['from'] : ''; ?>" name="from" placeholder="From"/>
             </div>
             <div class="form-group">
                 <label class="control-label">To</label>
-                <input type="text" class="form-control to" value="<?php echo isset($_POST['to']) ? $_POST['to'] : ''; ?>" name="to" placeholder="To"/>
+                <input type="text" class="form-control to" autocomplete="off" value="<?php echo isset($_POST['to']) ? $_POST['to'] : ''; ?>" name="to" placeholder="To"/>
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-success" name="getReport" value="Get Report"/>
@@ -68,7 +68,7 @@ require_once('header.php');
             </tr>
             <tr>
                 <td>4</td>
-                <td>No Of Rotahaler Changed</td>
+                <td>No. Of Rotahaler Changed</td>
                 <td><?php echo $result->Rotahaler; ?></td>
             </tr>
 
