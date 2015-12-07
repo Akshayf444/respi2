@@ -47,6 +47,11 @@ class man_power extends Table {
 
         return Query::executeQuery($sql);
     }
+    public static function update_bm($BM_Name,$BM_Mobile,$BM_Emp_id) {
+        $sql = "update respi2_bm set BM_Name='$BM_Name',BM_Mobile='$BM_Mobile' Where BM_Emp_Id=$BM_Emp_id ";
+
+        return Query::executeQuery2($sql);
+    }
 
     public static function adminLogin($id = "", $password = "") {
         global $database;

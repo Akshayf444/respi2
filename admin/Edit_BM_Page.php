@@ -22,6 +22,7 @@ if (isset($_GET['BM_Name'])) {
     );
     $update = new man_power();
     $update->update($field_array);
+    $update2=man_power::update_bm($BM_Name,$BM_Mobile,$BM_Emp_id);
     header("location:Edit_Bm.php");
 }
 ?>
