@@ -23,23 +23,24 @@
 
         <!-- Morris Charts CSS -->
         <link href="http://instacom.in/Cutisera/bower_components/morrisjs/morris.css" rel="stylesheet" />
-
+        <script src="../jquery-ui.js" type="text/javascript"></script>
         <!-- Custom Fonts -->
-        <link href="http://instacom.in/Cutisera/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" /></asp:ContentPlaceHolder>
-</head>
-<body>
+        <link href="http://instacom.in/Cutisera/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    </head>
 
-    <div id="wrapper">
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0;background-image:url(http://instacom.in/respi2/Images/strip.png); background-repeat:no-repeat; background-size: 100% 122px;">
-            <ul class="nav navbar-top-links navbar-right" style=" float:left !important">
-                <a id="anchr_Home" ><img id="Image1" src="http://instacom.in/respi2/Images/screen.png" style="position: relative;height:9%;width: 13%;"></a> 
+    <body>
 
-                <label id="lblName"  style="color:white">Welcome <?php
-                    if (isset($_SESSION['adminname'])) {
-                        echo $_SESSION['adminname'];
-                    }
-                    ?></label>
+        <div id="wrapper">
+            <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0;background-image:url(http://instacom.in/respi2/Images/strip.png); background-repeat:no-repeat; background-size: 100% 122px;">
+                <ul class="nav navbar-top-links navbar-right" style=" float:left !important">
+                    <a id="anchr_Home" ><img id="Image1" src="http://instacom.in/respi2/Images/screen.png" style="position: relative;height:9%;width: 13%;"></a> 
 
-                <a href="logout.php"> <i class="fa fa-power-off fa-2x pull-right" style="color:red;position: relative;right: 17px;margin-top: 1%;"></i></a>
-            </ul>
-        </nav>
+                    <label id="lblName"  style="color:white">Welcome <?php
+                        if (isset($_SESSION['adminname'])) {
+                            echo $_SESSION['adminname'];
+                        }
+                        ?></label>
+
+                    <a href="logout.php"> <i class="fa fa-power-off fa-2x pull-right" style="color:red;position: relative;right: 17px;margin-top: 1%;"></i></a>
+                </ul>
+            </nav>

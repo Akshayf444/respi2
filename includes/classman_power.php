@@ -68,12 +68,26 @@ class man_power extends Table {
         return Query::executeQuery($sql);
     }
 
-    public static function SMDropdowm() {
+    public static function BMList() {
+        $sql = "SELECT DISTINCT(`BM_Emp_Id`) As BM_Emp_Id,`BM_Name` , `BM_Mobile` FROM `respi2_manpower`";
+        return Query::executeQuery($sql);
+    }
+
+    public static function BMlist2($condition) {
+        $sql = "SELECT * FROM `respi2_bm` WHERE id " . $condition;
+        return Query::executeQuery($sql);
+    }
+
+    public static function SMDropdowm($smid = 0) {
         $output = '<option>Select SM</option>';
         $smlist = self::SMList();
         if (!empty($smlist)) {
             foreach ($smlist as $sm) {
-                $output.= "<option value = " . $sm->SM_Emp_Id . " >" . $sm->SM_Name . "</option>";
+                if ($sm->SM_Emp_Id == $smid) {
+                    $output.= "<option value = " . $sm->SM_Emp_Id . " selected >" . $sm->SM_Name . "</option>";
+                } else {
+                    $output.= "<option value = " . $sm->SM_Emp_Id . " >" . $sm->SM_Name . "</option>";
+                }
             }
         }
 
