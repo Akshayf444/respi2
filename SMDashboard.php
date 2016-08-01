@@ -197,6 +197,8 @@ $sm_empid = $_SESSION['smemp'];
             </div>
         </div>
     </div>
+
+
     <div class="row" style="padding-top:20px">
         <div class="col-lg-6 col-md-6">
             <div style="background-color:#36B37F;border-radius:4px;border:1px solid transparent">
@@ -257,6 +259,7 @@ $sm_empid = $_SESSION['smemp'];
             </div>
         </div>
     </div>
+
     <div class="row">
         <div style="display: block; margin: 10px auto 0 auto; padding: 10px 5px 5px 10px; width: 96%; max-width: 940px; min-width: 240px; font-size: .8em; line-height: 1.5em;">
             <!-- Jssor Slider Begin -->
