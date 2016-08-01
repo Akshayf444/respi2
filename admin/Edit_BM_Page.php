@@ -26,7 +26,6 @@ if (isset($_GET['BM_Name'])) {
     header("location:Edit_Bm.php");
 }
 ?>
-
 <div class="row">
     <div class="col-lg-6 panel panel-default">
         <div class="panel panel-body">
@@ -47,10 +46,4 @@ if (isset($_GET['BM_Name'])) {
         </div>
     </div>
 </div>
-
-
-
-
-
-
 <?php require_once './footer.php'; ?>

@@ -14,5 +14,6 @@ require_once('classman_power.php');
 require_once ('query.php');
 require_once ('sm.php');
 require_once ('Activity.php');
+require_once ('Activity2.php');
 require_once ('SMS.php');
 ///require_once ('c:/wamp/www/jardiance/Classes/PHPExcel.php');

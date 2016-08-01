@@ -11,10 +11,10 @@ if (isset($_POST['getReport'])) {
     $from = $_POST['from'];
     $to = $_POST['to'];
     $conditions = array("WHERE rm.smsWayid = " . $bm_empid, "AND DATE_FORMAT(act.created,'%Y-%m-%d') BETWEEN '$from' AND '$to'  ");
-    $result = man_power::bmViewStatus($conditions);
+    $result = man_power::bmViewStatus3($conditions);
 } else {
     $conditions = array("WHERE rm.smsWayid = " . $bm_empid);
-    $result = man_power::bmViewStatus($conditions);
+    $result = man_power::bmViewStatus3($conditions);
 }
 require_once('header.php');
 ?>
@@ -53,23 +53,28 @@ require_once('header.php');
 
             <tr>
                 <td>1</td>
-                <td>Drs. Started Practicing Change</td>
-                <td><?php echo $result->Practicing_Change; ?></td>
+                <td>Doctor Converted</td>
+                <td><?php echo $result->doctor_converted; ?></td>
             </tr>
             <tr>
                 <td>2</td>
-                <td>Rotahaler Check points</td>
-                <td><?php echo $result->Check_Points; ?></td>
+                <td>Health Device Clinic</td>
+                <td><?php echo $result->device_clinic; ?></td>
             </tr>
             <tr>
                 <td>3</td>
                 <td>RCP Drives</td>
-                <td><?php echo $result->RCP_Drives; ?></td>
+                <td><?php echo $result->rcp_drive; ?></td>
             </tr>
             <tr>
                 <td>4</td>
                 <td>No. Of Rotahaler Changed</td>
-                <td><?php echo $result->Rotahaler; ?></td>
+                <td><?php echo $result->rotahaler; ?></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>RCP Made</td>
+                <td><?php echo $result->rcp_made; ?></td>
             </tr>
 
         <?php } ?>

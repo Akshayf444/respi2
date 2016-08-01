@@ -10,12 +10,12 @@ $SMList = man_power::SMDropdowm();
 
 //$sm_empid = $_POST['SM_Emp_Id'];
 $conditions = array(" GROUP BY rm.BM_EMP_ID ");
-$BMList = man_power::bmViewStatus2($conditions);
+$BMList = man_power::bmViewStatus4($conditions);
 if (isset($_GET['from']) && isset($_GET['to'])) {
     $from = $_GET['from'];
     $to = $_GET['to'];
     $conditions = array(" WHERE DATE_FORMAT(act.created,'%Y-%m-%d') BETWEEN '$from' AND '$to' ", " GROUP BY rm.BM_EMP_ID ");
-    $BMList = man_power::bmViewStatus2($conditions);
+    $BMList = man_power::bmViewStatus4($conditions);
 }
 require_once './header.php';
 ?>
@@ -53,10 +53,11 @@ require_once './header.php';
                     <th>Zone</th>
                     <th>Region</th>
                     <th>BM Name</th>
-                    <th>Drs. Started Practicing Change</th>
-                    <th>Rotahaler Check points</th>
+                    <th>Doctor Converted</th>
+                    <th>Health Device Clinic</th>
                     <th>RCP Drives</th>
-                    <th>No. Of Rotahaler Changed</th>
+                    <th>No of Rotahaler Changed</th>
+                    <th>RCP Made</th>
                 </tr>
                 <?php
                 foreach ($BMList as $value) {
@@ -64,10 +65,11 @@ require_once './header.php';
                     . '<td>' . $value->Zone . '</td>'
                     . '<td>' . $value->Region . '</td>'
                     . '<td>' . $value->BM_Name . '</td>'
-                    . '<td>' . $value->Practicing_Change . '</td>'
-                    . '<td>' . $value->Check_Points . '</td>'
-                    . '<td>' . $value->RCP_Drives . '</td>'
-                    . '<td>' . $value->Rotahaler . '</td>'
+                    . '<td>' . $value->doctor_converted . '</td>'
+                    . '<td>' . $value->device_clinic . '</td>'
+                    . '<td>' . $value->rcp_drive . '</td>'
+                    . '<td>' . $value->rotahaler . '</td>'
+                    . '<td>' . $value->rcp_made . '</td>'
                     . '</tr>';
                 }
                 ?>

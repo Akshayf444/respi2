@@ -9,7 +9,7 @@ if (!isset($_SESSION['adminname'])) {
 
 if (isset($_GET['id'])) {
     $bm_emp_id = $_GET['id'];
-    $topper = man_power::Activity_list($bm_emp_id);
+    $topper = man_power::Activity_list2($bm_emp_id);
 }
 
 
@@ -24,10 +24,11 @@ require_once('header.php');
             <table class="table table-bordered table-stripped">
                 <tr style="background: #5BC6DE">
                     <th>BM Name</th>
-                    <th>Drs. Started Practicing Change</th>
-                    <th>Rotahaler Check points</th>
+                    <th>Doctor Converted</th>
+                    <th>Health Device Clinic</th>
                     <th>RCP Drives</th>
                     <th>No of Rotahaler Changed</th>
+                    <th>RCP Made</th>
                     <th>Date</th>
                 </tr>
                 <?php
@@ -35,11 +36,12 @@ require_once('header.php');
                     foreach ($topper as $value) {
                         echo '<tr>'
                         . '<td>' . $value->BM_Name . '</td>'
-                        . '<td>' . $value->Practicing_Change . '</td>'
-                        . '<td>' . $value->Check_Points . '</td>'
-                        . '<td>' . $value->RCP_Drives . '</td>'
-                        . '<td>' . $value->Rotahaler . '</td>'
-                        . '<td>' . date('d-m-Y', strtotime($value->created)) . '</td>'
+                        . '<td>' . $value->doctor_converted . '</td>'
+                        . '<td>' . $value->device_clinic . '</td>'
+                        . '<td>' . $value->rcp_drive . '</td>'
+                        . '<td>' . $value->rotahaler . '</td>'
+                        . '<td>' . $value->rcp_made . '</td>'
+                        . '<td>' . date('d-m-Y', strtotime($value->created_at)) . '</td>'
                         . '</tr>';
                     }
                 }

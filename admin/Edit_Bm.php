@@ -11,7 +11,6 @@ $show = man_power::BMList();
 
 
 ?>
-
 <div class="row">
     <div class="col-lg-12">
         <table class="table table-bordered table-stripped">
@@ -37,10 +36,4 @@ $show = man_power::BMList();
         </table>
     </div>
 </div>
-
-
-
-
-
-
 <?php require_once './footer.php'; ?>

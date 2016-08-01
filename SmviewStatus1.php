@@ -9,7 +9,7 @@ if (!isset($_SESSION['smemp'])) {
 $sm_empid = $_SESSION['smemp'];
 
 $conditions = array("WHERE rm.SM_EMP_ID = '$sm_empid' GROUP BY rm.BM_EMP_ID ");
-$topper = man_power::bmViewStatus4($conditions);
+$topper = man_power::bmViewStatus2($conditions);
 
 require_once('header.php');
 ?>
@@ -22,30 +22,27 @@ require_once('header.php');
             <table class="table table-bordered table-stripped">
                 <tr style="background: #5BC6DE">
                     <th>BM Name</th>
-                     <th>Doctor Converted</th>
-                    <th>Health Device Clinic</th>
+                    <th>Drs. Started Practicing Change</th>
+                    <th>Rotahaler Check points</th>
                     <th>RCP Drives</th>
-                    <th>No of Rotahaler Changed</th>
-                    <th>RCP Made</th>
-
+                    <th>No. Of Rotahaler Changed</th>
                 </tr>
                 <?php
                 if (!empty($topper)) {
                     foreach ($topper as $value) {
                         echo '<tr>'
-                        . '<td>' . $value->BM_Name . '</td>'
-                        . '<td>' . $value->doctor_converted . '</td>'
-                        . '<td>' . $value->device_clinic . '</td>'
-                        . '<td>' . $value->rcp_drive . '</td>'
-                        . '<td>' . $value->rotahaler . '</td>'
-                        . '<td>' . $value->rcp_made . '</td>'
-
+                        . '<td><a href="Activity_list.php?id='.$value->BM_Emp_Id.'">' . $value->BM_Name . '</a></td>'
+                        . '<td>' . $value->Practicing_Change . '</td>'
+                        . '<td>' . $value->Check_Points . '</td>'
+                        . '<td>' . $value->RCP_Drives . '</td>'
+                        . '<td>' . $value->Rotahaler . '</td>'
                         . '</tr>';
                     }
                 }
                 ?>
             </table>
         </div>
+
     </div>
 </div>
 

@@ -6,19 +6,18 @@ if (!isset($_SESSION['bdmemp'])) {
     header("Location: index.php");
     exit();
 }
-if (isset($_POST['rotahaler'])) {
+if (isset($_POST['Rotahaler'])) {
     $field_array = array(
-        'doctor_converted' => $_POST['doctor_converted'],
-        'device_clinic' => $_POST['device_clinic'],
-        'rcp_made' => $_POST['rcp_made'],
-        'rcp_drive' => $_POST['rcp_drive'],
-        'rotahaler' => $_POST['rotahaler'],
+        'Practicing_Change' => $_POST['Practicing_Change'],
+        'Check_Points' => $_POST['Check_Points'],
+        'RCP_Drives' => $_POST['RCP_Drives'],
+        'Rotahaler' => $_POST['Rotahaler'],
         'smsWayid' => $_SESSION['bdm'],
         'BM_Emp_Id' => $_SESSION['bdmemp'],
         'SM_Emp_Id' => $_SESSION['sm_emp'],
-        'created_at' => date('Y-m-d H:i:s'),
+        'created' => date('Y-m-d H:i:s'),
     );
-    $add = new Activity2();
+    $add = new Activity();
     $query = $add->create($field_array);
     header("location:ThankYou.php");
 }
@@ -38,19 +37,16 @@ require_once('header.php');
                 <div class="panel-heading">Enter Details For Reporting TMs</div>
                 <div class="panel-body"> 
                     <div class="form-group">
-                        <input type="number" name="doctor_converted" class="form-control" placeholder="Doctor Converted" required="">
+                        <input type="number" name="Practicing_Change" class="form-control" placeholder="Drs. Started Practicing Change" required="">
                     </div>
                     <div class="form-group">
-                        <input type="number" name="device_clinic" class="form-control" placeholder="Healthy Device Clinics" required="">
+                        <input type="number" name="Check_Points" class="form-control" placeholder="Rotahaler Check Points" required="">
                     </div>
                     <div class="form-group">
-                        <input type="number" class="form-control" name="rcp_made" placeholder="RCP Made" required="">
+                        <input type="number" class="form-control" name="RCP_Drives" placeholder="RCP Drives" required="">
                     </div>
                     <div class="form-group">
-                        <input type="number" class="form-control" name="rcp_drive" placeholder="RCP Drive" required="">
-                    </div>
-                    <div class="form-group">
-                        <input type="number" class="form-control" name="rotahaler" placeholder="Rotahaler Changed" required="">
+                        <input type="number" class="form-control" name="Rotahaler" placeholder="No.of  Rotahaler Changed" required="">
                     </div>
                     <div class="form-group">
                         <input type="submit" class="btn btn-primary "  name="save" value="Submit" placeholder="No of Rx">

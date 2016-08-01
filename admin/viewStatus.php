@@ -11,13 +11,13 @@ if (isset($_GET['SM_Emp_Id'])) {
     $sm_empid = $_GET['SM_Emp_Id'];
     $SMList = man_power::SMDropdowm($sm_empid);
     $conditions = array("WHERE rm.SM_EMP_ID = '$sm_empid' GROUP BY rm.BM_EMP_ID ");
-    $BMList = man_power::bmViewStatus2($conditions);
+    $BMList = man_power::bmViewStatus4($conditions);
     //var_dump($BMList);
 }
 if (isset($_GET['allIndia'])) {
     //$sm_empid = $_POST['SM_Emp_Id'];
     $conditions = array(" GROUP BY rm.BM_EMP_ID ");
-    $BMList = man_power::bmViewStatus2($conditions);
+    $BMList = man_power::bmViewStatus4($conditions);
 }
 require_once './header.php';
 ?>
@@ -49,21 +49,23 @@ require_once './header.php';
                     <th>Zone</th>
                     <th>Region</th>
                     <th>BM Name</th>
-                    <th>Drs. Started Practicing Change</th>
-                    <th>Rotahaler Check points</th>
+                    <th>Doctor Converted</th>
+                    <th>Health Device Clinic</th>
                     <th>RCP Drives</th>
-                    <th>No. Of Rotahaler Changed</th>
+                    <th>No of Rotahaler Changed</th>
+                    <th>RCP Made</th>
                 </tr>
                 <?php
                 foreach ($BMList as $value) {
                     echo '<tr>'
-                     . '<td>' . $value->Zone . '</td>'
-                     . '<td>' . $value->Region . '</td>'
+                    . '<td>' . $value->Zone . '</td>'
+                    . '<td>' . $value->Region . '</td>'
                     . '<td><a href="Activity_list.php?id=' . $value->BM_Emp_Id . '">' . $value->BM_Name . '</a></td>'
-                    . '<td>' . $value->Practicing_Change . '</td>'
-                    . '<td>' . $value->Check_Points . '</td>'
-                    . '<td>' . $value->RCP_Drives . '</td>'
-                    . '<td>' . $value->Rotahaler . '</td>'
+                    . '<td>' . $value->doctor_converted . '</td>'
+                    . '<td>' . $value->device_clinic . '</td>'
+                    . '<td>' . $value->rcp_drive . '</td>'
+                    . '<td>' . $value->rotahaler . '</td>'
+                    . '<td>' . $value->rcp_made . '</td>'
                     . '</tr>';
                 }
                 ?>
